@@ -1,0 +1,75 @@
+body {
+  background: black;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.sub-container {
+  background: gray;
+}
+
+h2 {
+  margin-top: 20px;
+}
+
+#getweather {
+  margin: 20px;
+}
+
+.footer {
+  background: black;
+}
+
+.footer-one {
+  text-align: left;
+}
+
+.footer-two {
+  text-align: right;
+}
+
+#loading-container {
+  display: none;
+}
+
+$cubeSize: 2em;
+$light: #ECECEC;
+$dark: gray;
+
+.loader {
+  margin-bottom: 10px;
+  width: $cubeSize;
+  height: $cubeSize;
+  animation: loaderAnim 1.25s infinite;
+  outline: 1px solid transparent;
+  #largeBox {
+    height: $cubeSize;
+    width: $cubeSize;
+    background-color: $light;
+    outline: 1px solid transparent;
+    position: fixed;
+  }
+  #smallBox {
+    height: $cubeSize;
+    width: $cubeSize;
+    background-color: $dark;
+    position: fixed;
+    z-index: 1;
+    outline: 1px solid transparent;
+    animation: smallBoxAnim 1.25s alternate infinite ease-in-out;
+  }
+}
+
+@keyframes smallBoxAnim {
+  0% {transform: scale(0.2);}
+  100% {transform: scale(0.75);}
+}
+
+@keyframes loaderAnim {
+  0% {transform: rotate(0deg);}
+  100% {transform: rotate(90deg);}
+}
